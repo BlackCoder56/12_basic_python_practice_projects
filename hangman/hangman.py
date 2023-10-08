@@ -14,3 +14,18 @@ def hangman():
     word_letter = set(word) # storing valid word in set
     alphabet = set(string.ascii_uppercase) # dictionary alphabets
     used_letter = set() # letters user already guessed
+    
+    # user input
+    user_letter = input('Guess the word: ').upper()
+    
+    if user_letter in alphabet - used_letter:
+        used_letter.add(user_letter)
+        if user_letter in used_letter:
+            used_letter.remove(user_letter)
+    elif user_letter in used_letter:
+        print('You have already used this character!!')
+    else:
+        print('Invalid input!')
+    
+
+hangman()
