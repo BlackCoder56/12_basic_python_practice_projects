@@ -1,1 +1,1 @@
-words = ["word", "dort"]
+words = ['WORD', 'DORT']
