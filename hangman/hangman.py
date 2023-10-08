@@ -8,7 +8,7 @@ def get_valid_word(words):
     word = random.choice(words) # gets initial random word
     while '-' in word or ' ' in word: # iterates whenever the word contains dash[-] or space
         word = random.choice(words) # gets new random number    
-    return word # returns valid word
+    return word.upper() # returns valid word
 
 # hangman function
 def hangman():
@@ -16,7 +16,7 @@ def hangman():
     word_letter = set(word) # storing valid word in set
     alphabet = set(string.ascii_uppercase) # dictionary alphabets
     used_letter = set() # letters user already guessed   
-    lives = 6 
+    lives = 5
     
     while len(word_letter) > 0 and lives > 0:        
         
@@ -26,7 +26,7 @@ def hangman():
         print('Current word: ', ' '.join(word_list))  # print currently guessed word 
         print('--------------------------------------')
         print('\nYou remaining with ', lives, ' lives') # print lives remaining
-        
+        print(word)
         # user input
         user_letter = input('Guess the word: ').upper()       
         print('--------------------------------------\n')
